@@ -12,7 +12,7 @@
     
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://montero-ec.github.io/"> <!-- Puedes ajustar esto a tu URL real si la tienes -->
+    <meta property="og:url" content="https://montero-ec.github.io/">
     <meta property="og:title" content="📅 ¡Reserva YA! Tu Calendario Adviento Montero's.">
     <meta property="og:description" content="¡La cuenta regresiva más linda! 24 días de maquillaje full-size. Pocas unidades disponibles.">
     <meta property="og:image" content="https://montero-ec.github.io/img/monteros.png">
@@ -76,6 +76,9 @@
         const Clock = ({ size = 24, className = "" }) => (
             <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
         );
+        const MapPin = ({ size = 24, className = "" }) => (
+            <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        );
 
         // --- Componente Principal ---
         function App() {
@@ -116,6 +119,9 @@
                                 <span className="text-xl font-bold tracking-widest text-rose-600 font-serif">MONTERO'S</span>
                             </div>
                             <div className="flex items-center gap-3">
+                                <a href="https://maps.app.goo.gl/SodkgtYa32Giep1h7" target="_blank" rel="noreferrer" className="text-gray-500 hover:text-rose-600 transition-colors" title="Ver ubicación">
+                                    <MapPin size={24} />
+                                </a>
                                 <a href="https://tiktok.com/@monteros.ec" target="_blank" rel="noreferrer" className="text-gray-500 hover:text-rose-600 transition-colors">
                                     <TikTok size={24} />
                                 </a>
@@ -244,7 +250,6 @@
                                             >
                                                 <option value="Transferencia">Transferencia</option>
                                                 <option value="Efectivo">Efectivo</option>
-                                                <option value="Tarjeta">Tarjeta</option>
                                             </select>
                                         </div>
                                     </div>
@@ -271,8 +276,30 @@
                             </div>
                         </div>
 
+                        {/* Ubicación */}
+                        <div className="px-4 mt-12">
+                            <div className="bg-white rounded-2xl shadow-lg p-6 border border-rose-100">
+                                <div className="flex items-center gap-2 mb-4">
+                                    <div className="bg-rose-100 p-2 rounded-full text-rose-600">
+                                        <MapPin size={20} />
+                                    </div>
+                                    <h3 className="font-bold text-gray-800">Nuestra Ubicación</h3>
+                                </div>
+                                <p className="text-sm text-gray-600 mb-4">Visítanos en nuestra tienda física</p>
+                                <a 
+                                    href="https://maps.app.goo.gl/SodkgtYa32Giep1h7" 
+                                    target="_blank" 
+                                    rel="noreferrer"
+                                    className="inline-flex items-center gap-2 bg-rose-600 hover:bg-rose-700 text-white font-medium px-6 py-3 rounded-lg transition-colors"
+                                >
+                                    <MapPin size={18} />
+                                    <span>Ver en Google Maps</span>
+                                </a>
+                            </div>
+                        </div>
+
                         {/* Footer */}
-                        <div className="text-center mt-12 text-gray-400 text-sm pb-8">
+                        <div className="text-center mt-8 text-gray-400 text-sm pb-8">
                             <div className="flex justify-center gap-1 mb-2 text-yellow-400">
                                 <Star size={16} /><Star size={16} /><Star size={16} /><Star size={16} /><Star size={16} />
                             </div>
@@ -291,4 +318,3 @@
     </script>
 </body>
 </html>
-

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Condiciones de Devolución - Montero's</title>
+    <title>Nuestro Equipo - Montero's</title>
     <!-- Favicon -->
     <link rel="icon" href="https://monterosec.github.io/img/LG.ico" type="image/x-icon">
     
@@ -36,18 +36,7 @@
     </script>
     <style>
         body { font-family: 'Lato', sans-serif; background-color: #fff0f3; }
-        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
-        
-        /* Estilos para el contenido legal */
-        .legal-content h2 { color: #881337; font-size: 1.5rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; border-bottom: 1px solid #ffe4e6; padding-bottom: 0.5rem; }
-        .legal-content h3 { color: #d4af37; font-size: 1.2rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.5rem; }
-        .legal-content p { color: #4b5563; margin-bottom: 1rem; line-height: 1.6; }
-        .legal-content ul, .legal-content ol { margin-left: 1.5rem; margin-bottom: 1rem; color: #4b5563; }
-        .legal-content ul { list-style-type: disc; }
-        .legal-content ol { list-style-type: decimal; }
-        .legal-content li { margin-bottom: 0.5rem; }
-        .legal-content strong { color: #881337; }
-
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
         .mobile-menu {
             transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
             max-height: 0;
@@ -55,6 +44,26 @@
             overflow: hidden;
         }
         .mobile-menu.open { max-height: 400px; opacity: 1; }
+        
+        /* Efecto de imagen */
+        .profile-image-container {
+            position: relative;
+        }
+        .profile-image-container::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: -20px;
+            bottom: -20px;
+            border: 2px solid #d4af37;
+            z-index: 0;
+            border-radius: 1rem;
+        }
+        .profile-image {
+            position: relative;
+            z-index: 10;
+        }
     </style>
 </head>
 <body class="flex flex-col min-h-screen text-gray-800 pt-20">
@@ -64,155 +73,75 @@
     <main class="flex-grow py-12 px-4">
         
         <!-- Header -->
-        <section class="text-center mb-12">
+        <section class="text-center mb-16">
             <span class="inline-block py-1 px-3 rounded-full bg-montero-pink text-montero-dark text-xs font-bold tracking-widest mb-2">
-                GARANTÍA DE SATISFACCIÓN
+                CONOCE AL EQUIPO
             </span>
-            <h1 class="text-4xl md:text-5xl font-bold text-montero-dark mb-4">Condiciones de Devolución</h1>
-            <p class="text-gray-600 max-w-2xl mx-auto text-lg">
-                Tu satisfacción es nuestra prioridad. Conoce cómo gestionamos cambios, devoluciones y garantías.
-            </p>
+            <h1 class="text-4xl md:text-5xl font-bold text-montero-dark mb-4">La cara detrás de Montero's</h1>
+            <div class="h-1 w-20 bg-montero-gold mx-auto"></div>
         </section>
 
-        <!-- Contenedor del Documento -->
-        <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border-t-8 border-montero-gold">
-            <div class="p-8 md:p-12 legal-content">
+        <!-- Contenido Principal: Historia -->
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
                 
-                <div class="bg-gray-50 p-6 rounded-lg border border-gray-100 mb-8 text-sm flex flex-col sm:flex-row justify-between gap-2">
-                    <p class="mb-0"><strong>Fecha de vigencia:</strong> 5 de diciembre de 2025</p>
-                    <p class="mb-0"><strong>Última actualización:</strong> 5 de diciembre de 2025</p>
-                </div>
-
-                <p>En <strong>Montero's - Tienda de Maquillaje</strong> (en adelante, "nosotros" o "la Tienda"), nos esforzamos por garantizar tu satisfacción con cada compra. Estas Condiciones de Devolución regulan el proceso para devoluciones, cambios o reembolsos de productos adquiridos a través de nuestro sitio web <strong>monterosec.github.io</strong> (en adelante, "el Sitio Web").</p>
-
-                <p>Estas condiciones se basan en la <strong>Ley Orgánica de Defensa del Consumidor (LODC)</strong> de Ecuador (Arts. 42-45), que protege tus derechos como consumidor. Al realizar una compra, aceptas estos términos, así como nuestros <a href="tyc" class="text-blue-600 hover:underline">Términos y Condiciones de Uso</a> y <a href="pdp" class="text-blue-600 hover:underline">Política de Privacidad</a>. Si tienes dudas, contáctanos antes de enviar un producto.</p>
-
-                <h2>1. Identificación de la Tienda</h2>
-                <ul>
-                    <li><strong>Nombre:</strong> Montero's - Tienda de Maquillaje</li>
-                    <li><strong>Dirección:</strong> Pimampiro, Calle Juan Montalvo y Paquisha, Ecuador</li>
-                    <li><strong>Teléfono:</strong> 0981540453</li>
-                    <li><strong>Correo electrónico:</strong> monteros.ec@gmail.com</li>
-                </ul>
-
-                <h2>2. Motivos Aceptados para Devolución</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4 mb-4">
-                    <div class="bg-green-50 p-5 rounded-lg border border-green-100">
-                        <h3 style="margin-top:0; color:#15803d;"><i class="fa-solid fa-check-circle mr-2"></i>Aceptamos</h3>
-                        <ul class="ml-0 list-inside text-sm">
-                            <li><strong>Derecho de retracto voluntario:</strong> Si cambias de opinión y no deseas el producto.</li>
-                            <li><strong>Defecto o error en el producto:</strong> Daños, defectos de fabricación o si no coincide con la descripción (ej. color equivocado o caducado).</li>
-                            <li><strong>Error en el envío:</strong> Producto equivocado o cantidad incorrecta.</li>
-                        </ul>
-                    </div>
-                    <div class="bg-red-50 p-5 rounded-lg border border-red-100">
-                        <h3 style="margin-top:0; color:#be123c;"><i class="fa-solid fa-times-circle mr-2"></i>No Aceptamos</h3>
-                        <ul class="ml-0 list-inside text-sm">
-                            <li>Uso o daño causado por el usuario.</li>
-                            <li>Productos personalizados o consumibles abiertos (ej. maquillaje probado).</li>
-                            <li>Falta de etiquetas o empaque original.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h2>3. Plazos para Devolución</h2>
-                <p>De acuerdo con la LODC:</p>
-                <div class="overflow-x-auto mt-6 mb-6">
-                    <table class="min-w-full text-left text-sm whitespace-nowrap md:whitespace-normal border border-gray-200">
-                        <thead class="bg-montero-pink/50 text-montero-dark uppercase font-bold">
-                            <tr>
-                                <th class="px-4 py-3 border-b border-gray-200">Motivo</th>
-                                <th class="px-4 py-3 border-b border-gray-200">Plazo desde la Recepción</th>
-                                <th class="px-4 py-3 border-b border-gray-200">Condiciones Específicas</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-200">
-                            <tr>
-                                <td class="px-4 py-3 font-bold">Retracto voluntario</td>
-                                <td class="px-4 py-3">5 días hábiles</td>
-                                <td class="px-4 py-3">Producto sin usar, en empaque original con etiquetas intactas.</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-bold">Defecto o error nuestro</td>
-                                <td class="px-4 py-3">15 días calendario</td>
-                                <td class="px-4 py-3">Incluye fotos o evidencia del problema. Cubrimos costos de retorno.</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-3 font-bold">Error en envío</td>
-                                <td class="px-4 py-3">7 días hábiles</td>
-                                <td class="px-4 py-3">Verificar en la entrega; notificar inmediatamente.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <p class="text-sm italic">Si el plazo expira, no procesaremos la devolución, salvo excepciones por ley.</p>
-
-                <h2>4. Proceso de Devolución</h2>
-                <p>Sigue estos pasos para iniciar una devolución:</p>
-                <ol>
-                    <li><strong>Notifícanos:</strong> Contacta vía WhatsApp (0981540453) o correo (monteros.ec@gmail.com) dentro del plazo correspondiente. Proporciona: número de pedido, motivo, fotos del producto y empaque.</li>
-                    <li><strong>Autorización:</strong> Te enviaremos una confirmación con instrucciones (incluyendo etiqueta de retorno si aplica).</li>
-                    <li><strong>Envío de retorno:</strong> Envía el producto a nuestra dirección (Pimampiro, Calle Juan Montalvo y Paquisha). Usa un servicio de mensajería rastreable.
-                        <ul class="mt-2 text-sm bg-gray-50 p-3 rounded">
-                            <li><strong>Costos de retorno (Retracto):</strong> A cargo del usuario.</li>
-                            <li><strong>Costos de retorno (Defectos):</strong> A cargo de la Tienda.</li>
-                        </ul>
-                    </li>
-                    <li><strong>Inspección:</strong> Recibiremos e inspeccionaremos el producto en un máximo de 5 días hábiles.</li>
-                    <li><strong>Reembolso o cambio:</strong>
-                        <ul class="mt-2">
-                            <li><strong>Reembolso:</strong> Se procesa en el mismo método de pago en 10 días hábiles (sin deducciones, salvo costos de envío original si aplica).</li>
-                            <li><strong>Cambio:</strong> Por un producto equivalente disponible, asumiendo costos de nuevo envío.</li>
-                        </ul>
-                    </li>
-                </ol>
-                <p>No reembolsamos el costo de envío original en retractos voluntarios.</p>
-
-                <h2>5. Garantías</h2>
-                <ul>
-                    <li>Todos los productos tienen la garantía del fabricante (generalmente 6-12 meses para defectos).</li>
-                    <li>Si el problema surge después del plazo inicial, contacta al fabricante directamente.</li>
-                    <li>No cubrimos daños por mal uso, almacenamiento inadecuado o exposición a elementos (ej. maquillaje derretido por calor).</li>
-                </ul>
-
-                <h2>6. Excepciones y Limitaciones</h2>
-                <ul>
-                    <li><strong>Productos perecederos:</strong> Maquillaje con fecha de caducidad corta no es elegible para retracto si se acerca al vencimiento.</li>
-                    <li><strong>Eventos de fuerza mayor:</strong> Retrasos en inspección por huelgas o desastres no afectan tus derechos.</li>
-                    <li>En caso de disputa, puedes escalar a la <strong>Superintendencia de Control del Poder de Mercado (SCPM)</strong> o la <strong>Defensoría del Pueblo</strong>.</li>
-                </ul>
-
-                <h2>7. Actualizaciones</h2>
-                <p>Podemos modificar estas condiciones para cumplir con cambios legales. Te notificaremos por el Sitio Web o correo. Los cambios aplican a compras futuras.</p>
-
-                <h2>8. Contacto</h2>
-                <p>Para iniciar una devolución o resolver dudas:</p>
-                <div class="bg-montero-pink/30 p-6 rounded-lg mt-4 mb-4 flex flex-col md:flex-row gap-6 items-center justify-center text-center md:text-left">
-                    <div class="flex items-center gap-3">
-                        <div class="bg-montero-dark text-white w-10 h-10 rounded-full flex items-center justify-center"><i class="fa-brands fa-whatsapp"></i></div>
-                        <div>
-                            <span class="block text-xs font-bold text-gray-500 uppercase">WhatsApp</span>
-                            <a href="https://wa.me/593981540453" target="_blank" class="font-bold text-montero-dark">098 154 0453</a>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <div class="bg-montero-dark text-white w-10 h-10 rounded-full flex items-center justify-center"><i class="fa-solid fa-envelope"></i></div>
-                        <div>
-                            <span class="block text-xs font-bold text-gray-500 uppercase">Correo</span>
-                            <a href="mailto:monteros.ec@gmail.com" class="font-bold text-montero-dark">monteros.ec@gmail.com</a>
+                <!-- Columna Imagen -->
+                <div class="w-full lg:w-1/2 mb-8 lg:mb-0 px-4">
+                    <div class="profile-image-container max-w-md mx-auto">
+                        <img src="https://monterosec.github.io/img/fotos/pauleth.png" alt="Pauleth Montero" class="profile-image w-full rounded-2xl shadow-2xl object-cover h-[500px] object-top bg-white">
+                        
+                        <!-- Tarjeta Flotante -->
+                        <div class="absolute -bottom-6 -right-6 z-20 bg-white p-4 rounded-xl shadow-lg border-l-4 border-montero-dark hidden md:block">
+                            <p class="font-serif font-bold text-xl text-montero-dark">Pauleth Montero</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-wider">Fundadora & CEO</p>
                         </div>
                     </div>
                 </div>
-                <p class="text-center font-bold text-montero-gold text-lg mt-6">¡Tu satisfacción es nuestra prioridad!</p>
+
+                <!-- Columna Texto -->
+                <div class="w-full lg:w-1/2">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">¡Hola a todos!</h2>
+                    
+                    <div class="space-y-6 text-lg text-gray-600 leading-relaxed">
+                        <p>
+                            Soy <strong>Pauleth Montero</strong>, una joven emprendedora orgullosamente pimampireña y la fundadora de <span class="text-montero-dark font-bold">Montero's - Tienda de Maquillaje</span>.
+                        </p>
+                        
+                        <p>
+                            Desde pequeña, siempre me fascinó el mundo de la belleza, los colores y el arte del maquillaje. Esta pasión me llevó a querer crear un espacio donde mujeres y hombres puedan encontrar productos de calidad que resalten su belleza única.
+                        </p>
+
+                        <div class="bg-white p-6 rounded-xl border-l-4 border-montero-gold shadow-sm italic text-gray-700">
+                            "Montero's nació como un sueño personal, pero no ha sido un camino que he recorrido sola."
+                        </div>
+
+                        <p>
+                            Aunque soy la dueña y la cara visible de este emprendimiento, cuento con el apoyo incondicional de mi familia, quienes han sido mi mayor fortaleza en este proceso. En particular, un familiar muy cercano me ha ayudado a superar los desafíos del emprendimiento, desde el asesoramiento financiero hasta el respaldo emocional. Gracias a ellos, Montero's no solo es una tienda, sino una extensión de nuestra pasión compartida por el bienestar y la autoestima.
+                        </p>
+
+                        <p>
+                            En Montero's me esfuerzo por ofrecer una <strong>atención personalizada</strong>, porque creo que cada persona merece sentirse especial y encontrar el producto adecuado para sus necesidades. Cada vez que me acerco a un cliente, mi objetivo es ayudarlo a descubrir ese producto perfecto que lo haga sentir increíble.
+                        </p>
+
+                        <p>
+                            Este emprendimiento es mucho más que una tienda de maquillaje: es el resultado de años de sueños, esfuerzos y amor por lo que hago. Cada producto en nuestras estanterías ha sido cuidadosamente seleccionado por mí, asegurando que sea de la mejor calidad y cumpla con las expectativas de nuestros clientes.
+                        </p>
+
+                        <p class="font-bold text-montero-dark">
+                            ¡Gracias por formar parte de este viaje! En Montero's, siempre encontrarás un lugar donde se respeta y celebra la diversidad de la belleza.
+                        </p>
+                    </div>
+
+                    <!-- Firma / Redes -->
+                    <div class="mt-10 pt-8 border-t border-gray-200 flex items-center gap-4">
+                        <span class="text-sm font-bold text-gray-400 uppercase">Sígueme:</span>
+                        <a href="https://www.instagram.com/monteros.ec" target="_blank" class="text-gray-400 hover:text-montero-dark transition text-xl"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/" target="_blank" class="text-gray-400 hover:text-montero-dark transition text-xl"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.tiktok.com/@monteros.ec" target="_blank" class="text-gray-400 hover:text-montero-dark transition text-xl"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
 
             </div>
-        </div>
-
-        <!-- Botón Volver -->
-        <div class="text-center mt-12">
-            <a href="/" class="inline-block px-8 py-3 bg-gray-200 text-gray-700 font-bold rounded-full hover:bg-gray-300 transition">
-                <i class="fa-solid fa-arrow-left mr-2"></i> Volver al Inicio
-            </a>
         </div>
 
     </main>

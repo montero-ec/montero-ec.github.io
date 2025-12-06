@@ -151,8 +151,65 @@
 
     <div id="footer-container"></div>
 
-    <!-- JAVASCRIPT -->
+    <!-- JAVASCRIPT: LÓGICA DE CARRITO Y MENÚ -->
     <script>
+        // --- 1. LÓGICA DE CARRITO (Definida globalmente para los onclick) ---
+        
+        // Inicializar carrito desde localStorage o vacío
+        let cart = JSON.parse(localStorage.getItem('monteroCart')) || {
+            'p1': 0,
+            'p2': 0,
+            'p3': 0
+        };
+
+        // Función para actualizar cantidades
+        function updateQuantity(productId, change) {
+            // Asegurarse de que el producto exista en el objeto
+            if (!cart[productId]) cart[productId] = 0;
+            
+            const newQty = cart[productId] + change;
+            
+            // Evitar cantidades negativas
+            if (newQty >= 0) {
+                cart[productId] = newQty;
+                
+                // Actualizar visualmente el número
+                const qtyElement = document.getElementById(`qty-${productId}`);
+                if (qtyElement) qtyElement.innerText = newQty;
+                
+                // Guardar y actualizar UI global
+                saveCart();
+                updateBadge();
+            }
+        }
+
+        // Función para ir al checkout
+        function goToCheckout() {
+            const totalItems = Object.values(cart).reduce((a, b) => a + b, 0);
+            
+            if (totalItems === 0) {
+                // Feedback visual si no hay productos
+                alert("Tu carrito está vacío. Por favor selecciona al menos un calendario.");
+                return;
+            }
+            
+            // Redirigir a checkout
+            window.location.href = 'checkout';
+        }
+
+        // Guardar en LocalStorage
+        function saveCart() {
+            localStorage.setItem('monteroCart', JSON.stringify(cart));
+        }
+
+        // Actualizar burbuja del carrito (Badge)
+        function updateBadge() {
+            const totalItems = Object.values(cart).reduce((a, b) => a + b, 0);
+            const badges = document.querySelectorAll('.cart-badge');
+            badges.forEach(badge => badge.innerText = totalItems);
+        }
+
+        // --- 2. INICIALIZACIÓN AL CARGAR LA PÁGINA ---
         document.addEventListener('DOMContentLoaded', () => {
             const currentYear = new Date().getFullYear();
 
@@ -197,7 +254,7 @@
                 </div>
             </nav>`;
 
-            // Footer Component (Actualizado con el enlace a Equipo marcado)
+            // Footer Component
             const footerComponent = `
             <footer class="bg-gray-900 text-white pt-12 pb-6 border-t-4 border-montero-gold relative overflow-hidden">
                 <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-600 via-green-600 to-red-600 opacity-50"></div>
@@ -247,17 +304,17 @@
                 </div>
             </footer>`;
 
+            // Insertar Navbar y Footer
             document.getElementById('navbar-container').innerHTML = navbarComponent;
             document.getElementById('footer-container').innerHTML = footerComponent;
 
-            // Recuperar carrito para badge
-            const savedCart = localStorage.getItem('monteroCart');
-            if(savedCart) {
-                const cartState = JSON.parse(savedCart);
-                const totalItems = Object.values(cartState).reduce((a, b) => a + b, 0);
-                const badges = document.querySelectorAll('.cart-badge');
-                badges.forEach(badge => badge.innerText = totalItems);
+            // --- RESTAURAR ESTADO VISUAL DE LOS CONTADORES ---
+            // Recorrer el carrito guardado y actualizar los números en las tarjetas
+            for (const [id, qty] of Object.entries(cart)) {
+                const el = document.getElementById(`qty-${id}`);
+                if (el) el.innerText = qty;
             }
+            updateBadge(); // Actualizar badge inicial
 
             // Menú Móvil
             setTimeout(() => {
